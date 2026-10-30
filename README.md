@@ -9,10 +9,10 @@ This folder contains the current project documentation. The target website has n
 
 Open the document that matches the submission section you need to review.
 
-- [Project Planning](project-planning.md)
-- [Stakeholder Analysis](stakeholder-analysis.md)
-- [Database and API Design](database-and-api-design.md)
-- [UI/UX Design](ui-ux-design.md)
+- [Project Planning](documentation/project-planning.md)
+- [Stakeholder Analysis](documentation/stakeholder-analysis.md)
+- [Database and API Design](documentation/database-and-api-design.md)
+- [UI/UX Design](documentation/ui-ux-design.md)
 
 ## Current scope
 
