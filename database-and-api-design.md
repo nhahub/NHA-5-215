@@ -1,22 +1,18 @@
 # Conceptual Database and API Design
 
-> **Status: provisional.** This document describes a generic e-commerce model for academic design
-> purposes. UI automation against Swag Labs does not require direct access to the site's database
-> or API; this material supports SQL coursework and test-data planning only.
+> **Status:** provisional. This document describes a generic e-commerce model for academic design purposes. UI automation against Swag Labs does not require direct access to the site's database or API; this material supports SQL coursework and test-data planning only.
 
-**Database approach:** a relational SQL model is proposed for coursework; the database product is **TBD**.
+**Database approach:** a relational SQL model is proposed for coursework; the database product is TBD.
 
-## Database design purpose
+## Database Design Purpose
 
-The conceptual model represents the data commonly involved in product browsing, carts, and checkout.
-It can support SQL coursework and test-data planning. UI automation against a third-party demo site
-does not require direct access to that site's database.
+The conceptual model represents the data commonly involved in product browsing, carts, and checkout. It can support SQL coursework and test-data planning. UI automation against a third-party demo site does not require direct access to that site's database.
 
-## Conceptual entities
+## Conceptual Entities
 
 These entities represent the minimum records needed for a typical cart and order flow.
 
-| Entity | Example attributes | Purpose |
+| Entity | Example Attributes | Purpose |
 |--------|--------------------|---------|
 | Customer | `customer_id` (PK), `email` (unique), `first_name`, `last_name` | Represents a registered test customer. Avoid storing real personal data. |
 | Product | `product_id` (PK), `sku` (unique), `name`, `price`, `stock_quantity`, `is_active` | Represents an item available for browsing and purchase. |
@@ -25,7 +21,7 @@ These entities represent the minimum records needed for a typical cart and order
 | CustomerOrder | `order_id` (PK), `customer_id` (FK), `status`, `total_amount`, `created_at` | Represents a submitted order in a conceptual test environment. |
 | OrderItem | `order_item_id` (PK), `order_id` (FK), `product_id` (FK), `quantity`, `unit_price` | Preserves the product and price details associated with an order. |
 
-## Relationships and integrity rules
+## Relationships and Integrity Rules
 
 - One customer can have multiple carts over time; each cart belongs to one customer.
 - One cart can contain multiple cart items; each cart item references one product.
@@ -35,11 +31,11 @@ These entities represent the minimum records needed for a typical cart and order
 - Primary keys identify records; foreign keys preserve relationships; unique constraints protect customer email and product SKU.
 - Order items retain the unit price at purchase time so later catalog price changes do not alter historical order totals.
 
-## Conceptual API interactions
+## Conceptual API Interactions
 
 These are example resource operations, not verified endpoints for Swag Labs.
 
-| User journey | Example operation | Purpose |
+| User Journey | Example Operation | Purpose |
 |--------------|-------------------|---------|
 | Sign in | `POST /auth/login` | Authenticate a test user, if the target provides an authorized API. |
 | Browse products | `GET /products` | Retrieve products, if an API is available. |
@@ -48,7 +44,7 @@ These are example resource operations, not verified endpoints for Swag Labs.
 | Review cart | `GET /carts/{cartId}` | Retrieve cart contents and totals. |
 | Submit checkout | `POST /orders` | Create an order in an authorized test environment only. |
 
-## Test and privacy boundaries
+## Test and Privacy Boundaries
 
 - Do not infer that Swag Labs exposes these endpoints or permits API testing.
 - Do not query or modify a third-party production database.
