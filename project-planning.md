@@ -29,7 +29,13 @@ data is affected.
 - Document functional and non-functional requirements.
 - Design manual test cases and expected results.
 - Implement UI automation using Java, Selenium WebDriver, and JUnit 5.
-- Cover login, product selection, cart, and checkout journeys.
+- Cover the following sections:
+  1. **Login** — sign-in page (valid, locked-out, invalid credentials)
+  2. **Home page** — product listing page
+  3. **Cart** — shopping cart (review items, remove items, proceed to checkout)
+  4. **Checkout** — checkout flow (enter synthetic details, review order, order confirmation)
+  5. **Side menu** — side navigation menu (navigate between sections, logout)
+  6. **Footer** — page footer (links, copyright, company information)
 - Document a conceptual SQL data model and API interaction plan for academic purposes.
 - Record test outcomes and known limitations after implementation.
 
