@@ -23,7 +23,7 @@ Manual testing of e-commerce user journeys (login, product browsing, cart, check
 Design and implement an automated UI test suite covering the main shopper journeys on Swag Labs:
 
 1. **Login** — sign-in page (valid credentials, locked-out user, invalid credentials)
-2. **Home page** — product listing page (browse products)
+2. **inventory** — product listing page (browse products)
 3. **Cart** — shopping cart (review items, remove items, proceed to checkout)
 4. **Checkout** — checkout flow (enter synthetic details, review order, order confirmation)
 5. **Side menu** — side navigation menu (navigate between sections, logout)
