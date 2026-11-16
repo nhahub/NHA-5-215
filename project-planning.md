@@ -33,7 +33,7 @@ Swag Labs is a public demo site intended for testing, so no production system or
 - Apply POM design pattern for all page interactions.
 - Cover the following sections:
   1. **Login** — sign-in page (valid, locked-out, invalid credentials)
-  2. **Home page** — product listing page
+  2. **inventory** — product listing page
   3. **Cart** — shopping cart (review items, remove items, proceed to checkout)
   4. **Checkout** — checkout flow (enter synthetic details, review order, order confirmation)
   5. **Side menu** — side navigation menu (navigate between sections, logout)
