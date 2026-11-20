@@ -12,7 +12,7 @@ This plan defines the project scope, team responsibilities, schedule, and succes
 **Design pattern:** Page Object Model (POM)  
 **Build tool:** Apache Maven  
 **Driver management:** WebDriverManager (auto-downloads ChromeDriver)  
-**API testing tool:** Postman  
+**API testing tool:** none — out of scope (UI automation test types only: Smoke, Functional UI, Regression, Data-Driven, Cross-User)  
 **Reporting:** Allure Report with screenshots *(bonus)*
 
 ## Objective
@@ -31,35 +31,32 @@ Swag Labs is a public demo site intended for testing, so no production system or
 - Document and report all bugs found during manual testing (with screenshots/video).
 - Implement UI automation using Java, Selenium WebDriver 4, and TestNG.
 - Apply POM design pattern for all page interactions.
-- Cover the following sections:
+- Cover the following pages:
   1. **Login** — sign-in page (valid, locked-out, invalid credentials)
-  2. **inventory** — product listing page
-  3. **Cart** — shopping cart (review items, remove items, proceed to checkout)
-  4. **Checkout** — checkout flow (enter synthetic details, review order, order confirmation)
-  5. **Side menu** — side navigation menu (navigate between sections, logout)
-  6. **Footer** — page footer (links, copyright, company information)
-- Document a conceptual SQL data model and API interaction plan for academic purposes.
-- Create and execute a Postman collection covering the main Swag Labs API interactions.
+  2. **Inventory** — product listing page **including the side menu and footer inside it** (browse, sort, details, add/remove, navigation, logout, footer links & copyright)
+  3. **Cart** — shopping cart, separate page (review items, remove items, proceed to checkout)
+  4. **Checkout** — checkout flow, separate page (enter synthetic details, review order, order confirmation)
+- Cover UI automation test types (no API testing): Smoke, Functional UI, Regression, Data-Driven, Cross-User.
 - Record test outcomes and known limitations after implementation.
-- Produce a test summary report with manual, automation, and API metrics.
+- Produce a test summary report with manual and automation metrics.
 
 ### Out of Scope
 
 - Building or changing the Swag Labs website.
 - Accessing or modifying any private database or backend of the demo site.
 - Placing real orders or using real payment information.
+- API testing (Postman): out of scope — automation covers UI test types only.
 - Performance, security, or load testing.
 
 ## Team and Responsibilities (Group G1)
 
 | Team Member | Role | Responsibilities |
 |-------------|------|------------------|
-| Omnia Ahmed Mohamed | Team Leader | Coordinate the project, assign tasks, track progress, review deliverables, and prepare the final report. |
-| Mohamed Ali Abdelrahman | Sub Leader | Support the team leader, coordinate automation engineers, and review test implementation. |
-| Abdallah Hosain Abdel Wahab Abdel Hamed | Member | Contribute to project tasks and documentation. |
-| Eman Abd Elhady Hassan | Member | Contribute to project tasks and documentation. |
-| Reham Hesham Roshdy Mohamed | Member | Contribute to project tasks and documentation. |
-| Mai Ramadan Mahmoud Ahmed | Member | Contribute to project tasks and documentation. |
+| Omnia Ahmed Mohamed | Team Leader | Coordinate the project, assign tasks, track progress, review deliverables, and prepare the final report. Co-tests the Inventory page (products/sort) with Reham. |
+| Mohamed Ali Abdelrahman | Sub Leader | Support the team leader, coordinate automation engineers, and review test implementation. Owns Login. |
+| Eman Abd Elhady Hassan | Member | Owns the Cart page (review, remove, checkout entry) and its documentation. |
+| Reham Hesham Roshdy Mohamed | Member | Co-tests the Inventory page (footer links & copyright, TC_INV_103…TC_INV_113) with Omnia. |
+| Mai Ramadan Mahmoud Ahmed | Member | Owns the Checkout page (synthetic data, validation, confirmation) and its documentation. |
 
 ## Four-Week Plan
 
@@ -73,7 +70,7 @@ Swag Labs is a public demo site intended for testing, so no production system or
 ## Success Criteria
 
 - Swag Labs is documented as the selected target website and its demo status is confirmed.
-- Each in-scope journey (Login, Home page, Cart, Checkout, Side menu, Footer) has test cases with steps and expected results in Google Sheets.
+- Each in-scope page (Login, Inventory incl. side menu & footer, Cart, Checkout) has test cases with steps and expected results in Google Sheets.
 - All bugs are documented with evidence (screenshots or video) in Google Sheets.
 - Test outcomes can be traced to the documented scenarios.
 - Automation framework follows POM design pattern with TestNG.
@@ -95,16 +92,16 @@ Swag Labs is a public demo site intended for testing, so no production system or
 - [ ] WebDriverManager integration for ChromeDriver
 - [ ] Allure report configuration *(bonus)*
 
-### API Testing
-- [ ] Postman collection covering Swag Labs API interactions
-- [ ] Postman collection exported as .json and uploaded to GitHub
-- [ ] API test results documented in test summary report
+### Automation test types (no API)
+- [ ] Smoke, Functional UI, Regression, Data-Driven and Cross-User runs defined for the four pages
+- [ ] TestNG suites mapped to manual case IDs (Inventory implemented: 17 cases)
+- [ ] Allure report configuration *(bonus)*
 
 ### Reports & Presentation
 - [ ] Test summary report (manual + automation metrics with charts)
 - [ ] Final project report
 - [ ] Presentation (5–10 minutes, PowerPoint or similar)
-- [ ] GitHub repository with all deliverables including Postman collection
+- [ ] GitHub repository with all deliverables (no Postman collection — UI automation types only)
 
 ## Open Items
 
